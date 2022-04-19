@@ -1,0 +1,93 @@
+p
+{
+    font-family: Constantia, Palatino, 'Palatino Linotype',  'Palatino LT STD', Georgia, serif;
+    font-size: 2vw;
+}
+#tablero
+{
+    background-color: #ff0037;
+    background-image:  linear-gradient(135deg, #000000 25%, transparent 25%), linear-gradient(225deg, #000000 25%, transparent 25%), linear-gradient(45deg, #000000 25%, transparent 25%), linear-gradient(315deg, #000000 25%, #ff003c 25%);
+    background-position:  40px 0, 40px 0, 0 0, 0 0;
+    background-size: 40px 40px;
+    background-repeat: repeat;
+    border-radius: 2vw;
+    border: 0.5vw black solid;
+    width: 60vw;
+    margin: 2vw;
+}
+img
+{
+    width: 4.4vw;
+}
+#centrar
+{
+    display: flex;
+    align-content: center;
+    justify-content: space-around;
+}
+.volteada
+{
+    content:url("Cartas/detras.jpg");
+}
+#jugador1, #jugador4
+{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+#medio
+{
+    display: flex;
+    justify-content: space-between;
+}
+#jugador2, #jugador3
+{
+    display: flex;
+    flex-direction: column;
+}
+#jugador2
+{
+    flex-direction: column-reverse;
+}
+#jugador4
+{
+    flex-direction: row-reverse;
+}
+#jugador2 > img, #jugador3 > img 
+{
+    /*transform: rotate(90deg);*/
+    margin: -3.5vh 0;
+}
+.move1
+{
+    transform: translate(0,14vw) scale(1.7);
+    filter: opacity(0);
+    transition: transform 600ms, filter 400ms 600ms;
+}
+.move2
+{
+    transform: translate(14vw,0) scale(1.7) rotate(90deg);
+    filter: opacity(0);
+    transition: transform 600ms, filter 400ms 600ms;
+}
+.move3
+{
+    transform: translate(-14vw,0) scale(1.7) rotate(-90deg);
+    filter: opacity(0);
+    transition: transform 600ms, filter 400ms 600ms;
+}
+.move4
+{
+    transform: translate(0,-14vw) scale(1.7);
+    filter: opacity(0);
+    transition: transform 600ms, filter 400ms 600ms;
+}
+#popChart
+{
+    border: 0.6vw black solid;
+    background-color: #777c;
+}
+.Grafica
+{
+    width: 45vw;
+}

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Juego de barajas</title>
+	<link rel="stylesheet" href="styles.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js" integrity="sha512-QSkVNOCYLtj73J4hbmVoOV6KVZuMluZlioC+trLpewV8qMjsWqlIQvkn1KGX2StWvPMdWGBqim1xlC8krl1EKQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script src="main.js" type="text/javascript" charset="utf-8" async defer></script>
+</head>
+<body>
+	<p>Cuantas veces se quiere jugar?</p>
+	<input id="inputNum" type="number">
+	<button onclick="iniciar(0)">Inciar</button>
+	<div id="centrar">
+		<div id="contador">
+			<h1>Puntaje:</h1>
+			<h2>Jugador 1</h2>
+			<p id="Contador1">0</p>
+			<h2>Jugador 2</h2>
+			<p id="Contador2">0</p>
+			<h2>Jugador 3</h2>
+			<p id="Contador3">0</p>
+			<h2>Jugador 4</h2>
+			<p id="Contador4">0</p>
+		</div>
+		<div id="tablero">
+			<div id="jugador1">
+				<img src="" alt="">
+				<img src="" alt="">
+				<img src="" alt="">
+				<img src="" alt="">
+				<img src="" alt="">
+				<img src="" alt="">
+				<img src="" alt="">
+				<img src="" alt="">
+				<img src="" alt="">
+				<img src="" alt="">
+			</div>
+			<div id="medio">
+				<div id="jugador2">
+					<img src="" alt="">
+					<img src="" alt="">
+					<img src="" alt="">
+					<img src="" alt="">
+					<img src="" alt="">
+					<img src="" alt="">
+					<img src="" alt="">
+					<img src="" alt="">
+					<img src="" alt="">
+					<img src="" alt="">
+				</div>
+				<div id="jugador3">
+					<img src="" alt="">
+					<img src="" alt="">
+					<img src="" alt="">
+					<img src="" alt="">
+					<img src="" alt="">
+					<img src="" alt="">
+					<img src="" alt="">
+					<img src="" alt="">
+					<img src="" alt="">
+					<img src="" alt="">
+				</div>
+			</div>
+			<div id="jugador4">
+				<img src="" alt="">
+				<img src="" alt="">
+				<img src="" alt="">
+				<img src="" alt="">
+				<img src="" alt="">
+				<img src="" alt="">
+				<img src="" alt="">
+				<img src="" alt="">
+				<img src="" alt="">
+				<img src="" alt="">
+			</div>
+		</div>
+		<div id="contador">
+			<h1>Total ganadas:</h1>
+			<h2>Jugador 1</h2>
+			<p id="ganadas1">0</p>
+			<h2>Jugador 2</h2>
+			<p id="ganadas2">0</p>
+			<h2>Jugador 3</h2>
+			<p id="ganadas3">0</p>
+			<h2>Jugador 4</h2>
+			<p id="ganadas4">0</p>
+		</div>
+	</div>
+	<div class="Grafica"> 
+		<canvas id="popChart"></canvas>
+	</div>
+</body>
+</html>
