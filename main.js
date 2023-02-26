@@ -1,4 +1,22 @@
-function iniciar(num) // al dar click en el boton se inicia la simulacion
+const NUM_CARTAS = 40;
+const PALOS = {ORO: 0.25,COPAS: 0.5,ESPADAS: 0.75,BASTOS: 1};
+const VALORES_CARTAS = {
+    1: 2,
+    2: 1,
+    3: 2,
+    4: 3,
+    5: 4,
+    6: 5,
+    7: 6,
+    SOTA: 7,
+    CABALLO: 8,
+    REY: 9,
+    AS: 10
+};
+
+function generarNumeroAleatorio(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+} function iniciar(num) // al dar click en el boton se inicia la simulacion
 {
     let input = document.getElementById('inputNum').value;//obtiene el valor ingresado
     if(num == input)//al ser funcion recursiva se tiene que detener, se detiene al ser iguales
@@ -29,72 +47,24 @@ function iniciar(num) // al dar click en el boton se inicia la simulacion
         iniciar(num);
     },6500);//inplementa un intervalo de tiempo
 }
-function generaCartas(cartas) 
-{//genera de manera aleatoria las 40 cartas
-    for(var i = 0; i < 40; i++) 
-    {
+function generarCartas(cartas) {
+    for (let i = 0; i < NUM_CARTAS; i++) {
         let carta = 0;
         let paloCarta = Math.random();
-        if(paloCarta<0.25) //le asigna un valor dependiendo el tipo de palo
-        {//siendo la carta numero 40 la que tiene mas valor y la 1 la que tiene menos valor
-            carta = 30;//oro
-        }
-        else if(paloCarta>=0.25 && paloCarta<0.5)
-        {
-            carta = 20;//copas
-        }
-        else if(paloCarta>=0.5 && paloCarta<0.75)
-        {
-            carta = 10;//espadas
-        }
-        else if(paloCarta>=0.75)
-        {
-            carta = 0;//bastos
+        if (paloCarta < PALOS.ORO) {
+            carta = 30;
+        } else if (paloCarta < PALOS.COPAS) {
+            carta = 20;
+        } else if (paloCarta < PALOS.ESPADAS) {
+            carta = 10;
+        } else {
+            carta = 0;
         }
         let numeroCarta = Math.random();
-        if(numeroCarta<0.1)
-        {
-            carta += 10;//as
-        }
-        else if(numeroCarta>= 0.1 && numeroCarta<0.2)
-        {
-            carta += 9;//rey
-        }
-        else if(numeroCarta>= 0.2 && numeroCarta<0.3)
-        {
-            carta += 8;//caballo
-        }
-        else if(numeroCarta>= 0.3 && numeroCarta<0.4)
-        {
-            carta += 7;//sota
-        }
-        else if(numeroCarta>= 0.4 && numeroCarta<0.5)
-        {
-            carta += 6;//7
-        }
-        else if(numeroCarta>= 0.5 && numeroCarta<0.6)
-        {
-            carta += 5;//6
-        }
-        else if(numeroCarta>= 0.6 && numeroCarta<0.7)
-        {
-            carta += 4;//5
-        }
-        else if(numeroCarta>= 0.7 && numeroCarta<0.8)
-        {
-            carta += 3;//4
-        }
-        else if(numeroCarta>= 0.8 && numeroCarta<0.9)
-        {
-            carta += 2;//3
-        }
-        else if(numeroCarta>= 0.9)
-        {
-            carta += 1;//2
-        }
-        if(cartas.includes(carta))//valida si la carta generada ya esta en el array
-        {
-            i--; //en caso de que este, decrementa i y se salta el push y vuelve a generar la carta
+        let valorCarta = VALORES_CARTAS[generarNumeroAleatorio(1, 10)];
+        carta += valorCarta;
+        if (cartas.includes(carta)) {
+            i--;
             continue;
         }
         cartas.push(carta);
